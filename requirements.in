@@ -3,3 +3,10 @@ https://divio-addons.s3-eu-central-1.amazonaws.com/aldryn-addons/2.0.1/75074b5c-
 https://divio-addons.s3-eu-central-1.amazonaws.com/aldryn-django/3.2.8.0/8b1bde8d-0539-4422-b16f-e5f7f508600e/aldryn-django-3.2.8.0.tar.gz#egg=aldryn-django==3.2.8.0
 https://divio-addons.s3-eu-central-1.amazonaws.com/aldryn-sso/2.0.1/fc74bf76-5ef7-485e-b645-75b747d78ebf/aldryn-sso-2.0.1.tar.gz#egg=aldryn-sso==2.0.1
 # </INSTALLED_ADDONS>
+django-parler  # https://github.com/edoburu/django-parler (for multilanguage)
+django-filter  # https://github.com/carltongibson/django-filter
+django-ckeditor # https://github.com/django-ckeditor/django-ckeditor
+django-taggit  # https://github.com/jazzband/django-taggit
+django-taggit-templatetags  # http://github.com/feuervogel/django-taggit-templatetags
+sorl-thumbnail  # https://github.com/jazzband/sorl-thumbnail
+django-environ  # https://github.com/joke2k/django-environ
