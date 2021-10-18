@@ -200,7 +200,7 @@ DEFAULT_FILE_STORAGE = 'settings.DefaultStorageClass'
 #     MEDIA_URL = '/media/'
 # else:
 MEDIA_URL = "https://whatdigitaltechnicalassessmentpuredjang-6aa810e.divio-media.com"
-THUMBNAIL_DEFAULT_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+THUMBNAIL_DEFAULT_STORAGE = DEFAULT_FILE_STORAGE
 MEDIA_ROOT = str(ROOT_DIR.path('data/media/'))
 
 print("DefaultStorageClass", DefaultStorageClass)
