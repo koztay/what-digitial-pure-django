@@ -196,5 +196,5 @@ DefaultStorageClass = dsn_configured_storage_class('DEFAULT_STORAGE_DSN')
 # Django's DEFAULT_FILE_STORAGE requires the class name
 DEFAULT_FILE_STORAGE = 'settings.DefaultStorageClass'
 # MEDIA_URL = '/media/'
-MEDIA_URL = "https://whatdigitaltechnicalassessmentpuredjang-6aa810e.divio-media.com/media/"
+MEDIA_URL = "https://whatdigitaltechnicalassessmentpuredjang-6aa810e.divio-media.com/"
 MEDIA_ROOT = str(ROOT_DIR.path('data/media/'))
