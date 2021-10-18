@@ -11,4 +11,3 @@ django-taggit-templatetags  # http://github.com/feuervogel/django-taggit-templat
 # sorl-thumbnail  # https://github.com/jazzband/sorl-thumbnail
 django-environ  # https://github.com/joke2k/django-environ
 easy-thumbnails  # https://github.com/SmileyChris/easy-thumbnails
-django-environ  # https://github.com/joke2k/django-environ
