@@ -4,7 +4,7 @@
 <header class="masthead" style="background-image: url('{% static "img/home-bg.jpg" %}')">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="col-lg-9 mx-auto">
                 <div class="post-heading">
                     <h1>{% trans "All Articles" %}</h1>
                 </div>
@@ -13,3 +13,28 @@
     </div>
 </header>
 {% endblock header %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-9 mx-auto">
+            {% for article in object_list %}
+            {% include "articles/post_preview.html" with article=article %}
+            <hr>
+            {% endfor %}
+        </div>
+        <div class="col-lg-3 mx-auto">
+            tag list here
+            tag list here
+            tag list here
+            tag list here
+            tag list here
+            tag list here
+            tag list here
+            tag list here
+            tag list here
+            tag list here
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
