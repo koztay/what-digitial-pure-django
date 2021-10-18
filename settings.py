@@ -39,7 +39,7 @@ INSTALLED_ADDONS = [
 
 aldryn_addons.settings.load(locals())
 
-ROOT_DIR = environ.Path(__file__)
+ROOT_DIR = environ.Path(__file__) - 1
 
 # Your own Django settings can be applied from here on. Key settings like
 # INSTALLED_APPS, MIDDLEWARE and TEMPLATES are provided in the Aldryn Django
@@ -194,3 +194,8 @@ TAGGIT_CASE_INSENSITIVE = True
 #         'LOCATION': ''
 #     }
 # }
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = str(ROOT_DIR.path('data/media/'))
+print("MEDIA_ROOT", MEDIA_ROOT)
+print("ROOT_DIR", ROOT_DIR)
