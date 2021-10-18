@@ -5,12 +5,13 @@ from django.urls import reverse
 from ckeditor.fields import RichTextField
 from parler.models import TranslatableModel, TranslatedFields
 # from sorl.thumbnail import ImageField
+from easy_thumbnails.fields import ThumbnailerImageField
 from taggit.managers import TaggableManager
 
 
 class Article(TranslatableModel):
 
-    image = models.ImageField(upload_to="article-images")
+    image = ThumbnailerImageField(upload_to="article-images")
     tags = TaggableManager(blank=True)
     translations = TranslatedFields(
         title=models.CharField(
