@@ -199,5 +199,10 @@ DEFAULT_FILE_STORAGE = 'settings.DefaultStorageClass'
 if env.bool("DEBUG", False):
     MEDIA_URL = '/media/'
 else:
-    MEDIA_URL = "s3://AKIARHWFX7DIGZZL63WV:%2Bh6FgqtwFH1J5M0FukYo4wBz2kB4Vt9j52QsyuLz@whatdigitaltechnicalassessmentpuredjang-6aa810e.divio-media.com.s3.amazonaws.com/?auth=s3v4&domain=whatdigitaltechnicalassessmentpuredjang-6aa810e.divio-media.com"
+    MEDIA_URL = "https://whatdigitaltechnicalassessmentpuredjang-6aa810e.divio-media.com"
+    THUMBNAIL_DEFAULT_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 MEDIA_ROOT = str(ROOT_DIR.path('data/media/'))
+
+print("DefaultStorageClass", DefaultStorageClass)
+
+
