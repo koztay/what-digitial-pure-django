@@ -1,1 +1,35 @@
-{{homepage_articles}}
+{% extends "base.html" %}
+{% load i18n static %}
+
+{% block header %}
+<header class="masthead" style="background-image: url('{% static "img/home-bg.jpg" %}')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>what.</h1>
+                    <span class="subheading">{% trans "Awesome Articles" %}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock header %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            {% for article in homepage_articles %}
+            {% include "articles/post_preview.html" with article=article %}
+            <hr>
+            {% endfor %}
+            <!-- Pager -->
+            <div class="clearfix">
+                <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,25 @@
+{% load i18n static easy_thumbnails_tags %}
+<div class="post-preview">
+    <div class="row">
+        <div class="col-xs-4 mx-auto">
+            <a href="{{article.get_absolute_url}}">
+                <img src="{% thumbnail article.image 160x90 crop='smart' %}" alt="article thumbnail">
+
+            </a>
+        </div>
+        <div class="col-xs-8 mx-auto">
+
+            <a href="{{article.get_absolute_url}}">
+                <h2 class="post-title">
+                    {{ article.title }}
+                </h2>
+                <h3 class="post-subtitle">
+                    {{ article.description | safe | truncatewords_html:10 }}
+                </h3>
+            </a>
+            <p class="post-meta">
+                {% trans "Posted on :" %} {{ article.creation_date | date:"F d, Y" }}
+            </p>
+        </div>
+    </div>
+</div>

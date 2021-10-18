@@ -4,13 +4,13 @@ from django.urls import reverse
 
 from ckeditor.fields import RichTextField
 from parler.models import TranslatableModel, TranslatedFields
-from sorl.thumbnail import ImageField
+# from sorl.thumbnail import ImageField
 from taggit.managers import TaggableManager
 
 
 class Article(TranslatableModel):
 
-    image = ImageField(upload_to="article-images")
+    image = models.ImageField(upload_to="article-images")
     tags = TaggableManager(blank=True)
     translations = TranslatedFields(
         title=models.CharField(
@@ -29,4 +29,4 @@ class Article(TranslatableModel):
         return self.title
 
     def get_absolute_url(self):
-        return reverse("article_detail", kwargs={"slug": self.slug})
+        return reverse("article_detail", kwargs={"slug": self.slug, "pk": self.pk})

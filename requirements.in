@@ -8,5 +8,6 @@ django-filter  # https://github.com/carltongibson/django-filter
 django-ckeditor # https://github.com/django-ckeditor/django-ckeditor
 django-taggit  # https://github.com/jazzband/django-taggit
 django-taggit-templatetags  # http://github.com/feuervogel/django-taggit-templatetags
-sorl-thumbnail  # https://github.com/jazzband/sorl-thumbnail
+# sorl-thumbnail  # https://github.com/jazzband/sorl-thumbnail
 django-environ  # https://github.com/joke2k/django-environ
+easy-thumbnails # https://github.com/SmileyChris/easy-thumbnails

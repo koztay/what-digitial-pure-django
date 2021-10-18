@@ -2,11 +2,11 @@ from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
 
 from parler.admin import TranslatableAdmin
-from sorl.thumbnail.admin import AdminImageMixin
+# from sorl.thumbnail.admin import AdminImageMixin
 
 from . import models
 @admin.register(models.Article)
-class ArticleAdmin(AdminImageMixin, TranslatableAdmin):
+class ArticleAdmin(TranslatableAdmin):
     list_filter = ("tags",)
     fieldsets = (
         (1, {"fields": ("image", "tags", )}),

@@ -1,5 +1,5 @@
 # This is a fairly standard Django settings file, with some special additions
-# that allow addon applications to auto-configure themselves. If it looks 
+# that allow addon applications to auto-configure themselves. If it looks
 # unfamiliar, please see our documentation:
 #
 #   http://docs.divio.com/en/latest/reference/configuration-settings-file.html
@@ -8,10 +8,11 @@
 
 
 # INSTALLED_ADDONS is a list of self-configuring Divio Cloud addons - see the
-# Addons view in your project's dashboard. See also the addons directory in 
+# Addons view in your project's dashboard. See also the addons directory in
 # this project, and the INSTALLED_ADDONS section in requirements.in.
 
 
+import aldryn_addons.settings
 import environ
 from django.utils.translation import gettext_lazy as _
 
@@ -36,7 +37,6 @@ INSTALLED_ADDONS = [
 # Note that any settings you provide before the next two lines are liable to be
 # overwritten, so they should be placed *after* this section.
 
-import aldryn_addons.settings
 aldryn_addons.settings.load(locals())
 
 ROOT_DIR = environ.Path(__file__)
@@ -50,17 +50,17 @@ ROOT_DIR = environ.Path(__file__)
 # for guidance on managing these settings.
 
 
-
 INSTALLED_APPS.extend([
     # Extend the INSTALLED_APPS setting by listing additional applications here
     "articles",
     "taggit",
     "ckeditor",
-    "sorl.thumbnail",
+    # "sorl.thumbnail",
+    "easy_thumbnails",
 ])
 
-# To see the settings that have been applied, use the Django diffsettings 
-# management command. 
+# To see the settings that have been applied, use the Django diffsettings
+# management command.
 # See https://docs.divio.com/en/latest/how-to/configure-settings.html#list
 
 
@@ -186,6 +186,11 @@ PARLER_DEFAULT_LANGUAGE_CODE = 'en'
 # TAGGIT SETTINGS
 TAGGIT_CASE_INSENSITIVE = True
 
-
 # SORL THUMBNAIL SETTINGS
-THUMBNAIL_PRESERVE_FORMAT = True
+# THUMBNAIL_PRESERVE_FORMAT = True
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+#         'LOCATION': ''
+#     }
+# }
