@@ -197,5 +197,3 @@ TAGGIT_CASE_INSENSITIVE = True
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = str(ROOT_DIR.path('data/media/'))
-print("MEDIA_ROOT", MEDIA_ROOT)
-print("ROOT_DIR", ROOT_DIR)
