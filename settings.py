@@ -10,12 +10,12 @@
 # INSTALLED_ADDONS is a list of self-configuring Divio Cloud addons - see the
 # Addons view in your project's dashboard. See also the addons directory in
 # this project, and the INSTALLED_ADDONS section in requirements.in.
-
-
 import aldryn_addons.settings
 import environ
-from django.utils.translation import gettext_lazy as _
 
+from django_storage_url import dsn_configured_storage_class
+from django.utils.translation import gettext_lazy as _
+env = environ.Env()
 
 INSTALLED_ADDONS = [
     # Important: Items listed inside the next block are auto-generated.
@@ -186,14 +186,14 @@ PARLER_DEFAULT_LANGUAGE_CODE = 'en'
 # TAGGIT SETTINGS
 TAGGIT_CASE_INSENSITIVE = True
 
-# SORL THUMBNAIL SETTINGS
-# THUMBNAIL_PRESERVE_FORMAT = True
-# CACHES = {
-#     'default': {
-#         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-#         'LOCATION': ''
-#     }
-# }
-
+# Media files
+# DEFAULT_FILE_STORAGE is configured using DEFAULT_STORAGE_DSN
+# read the setting value from the environment variable
+DEFAULT_STORAGE_DSN = env.str(
+    'DEFAULT_STORAGE_DSN', default='file:///data/media/?url=%2Fmedia%2F')
+# dsn_configured_storage_class() requires the name of the setting
+DefaultStorageClass = dsn_configured_storage_class('DEFAULT_STORAGE_DSN')
+# Django's DEFAULT_FILE_STORAGE requires the class name
+DEFAULT_FILE_STORAGE = 'settings.DefaultStorageClass'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = str(ROOT_DIR.path('data/media/'))
