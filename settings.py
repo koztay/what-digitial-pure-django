@@ -56,6 +56,7 @@ INSTALLED_APPS.extend([
     "articles",
     "taggit",
     "ckeditor",
+    "sorl.thumbnail",
 ])
 
 # To see the settings that have been applied, use the Django diffsettings 
@@ -184,3 +185,7 @@ PARLER_DEFAULT_LANGUAGE_CODE = 'en'
 
 # TAGGIT SETTINGS
 TAGGIT_CASE_INSENSITIVE = True
+
+
+# SORL THUMBNAIL SETTINGS
+THUMBNAIL_PRESERVE_FORMAT = True

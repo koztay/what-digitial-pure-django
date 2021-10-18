@@ -4,7 +4,7 @@ from django.urls import reverse
 
 from ckeditor.fields import RichTextField
 from parler.models import TranslatableModel, TranslatedFields
-from sorl.thumbnail import ImageField, get_thumbnail
+from sorl.thumbnail import ImageField
 from taggit.managers import TaggableManager
 
 
@@ -13,7 +13,8 @@ class Article(TranslatableModel):
     image = ImageField(upload_to="article-images")
     tags = TaggableManager(blank=True)
     translations = TranslatedFields(
-        title=models.TextField(verbose_name=_('article title')),
+        title=models.CharField(
+            max_length=128, verbose_name=_('article title')),
         slug=models.SlugField(_("article slug"), max_length=255, blank=True),
         content=RichTextField(verbose_name=_('article content')),
         any_language=True,

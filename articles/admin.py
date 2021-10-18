@@ -6,7 +6,8 @@ from sorl.thumbnail.admin import AdminImageMixin
 
 from . import models
 @admin.register(models.Article)
-class ArticleAdmin(TranslatableAdmin):
+class ArticleAdmin(AdminImageMixin, TranslatableAdmin):
+    list_filter = ("tags",)
     fieldsets = (
         (1, {"fields": ("image", "tags", )}),
         (
