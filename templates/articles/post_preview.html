@@ -1,17 +1,17 @@
 {% load i18n static easy_thumbnails_tags %}
 <div class="post-preview">
-    <div class="row">
+    <div class="d-flex flex-row">
         <div class="col-xs-4">
             <a href="{{article.get_absolute_url}}">
                 <img src="{% thumbnail article.image 160x90 crop='smart' %}" alt="article thumbnail">
 
             </a>
         </div>
-        <div class="col-xs-7 ml-5 flex">
+        <div class="col-xs-7 ml-5 flex-column">
             <a href="{{article.get_absolute_url}}">
-                <h2 class="post-title">
+                <h3 class="post-title">
                     {{ article.title }}
-                </h2>
+                </h3>
             </a>
             <p class="post-subtitle">
                 {{ article.content | safe | truncatechars_html:20 }}
