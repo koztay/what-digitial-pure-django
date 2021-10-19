@@ -19,6 +19,7 @@ class HomePageView(TemplateView):
 
 class ArticleListView(ListView):
     model = Article
+    paginate_by = 5
 
 
 class ArticleDetailView(DetailView):
@@ -30,7 +31,8 @@ class ArticleDetailView(DetailView):
 
 class ArticleListTagFilterView(ListView):
     model = Article
-
+    paginate_by = 5
+    
     def get_queryset(self, *args, **kwargs):
         qs = super(ArticleListTagFilterView, self).get_queryset()
         tag_slug = self.kwargs["tag_slug"]
