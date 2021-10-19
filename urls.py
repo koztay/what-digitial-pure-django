@@ -7,7 +7,7 @@ from aldryn_django.utils import i18n_patterns
 import aldryn_addons.urls
 
 
-from articles.views import HomePageView, ArticleListView, ArticleDetailView
+from articles.views import HomePageView, ArticleListView, ArticleDetailView, ArticleListTagFilterView
 
 
 urlpatterns = [
@@ -18,6 +18,10 @@ urlpatterns = [
     url(_(r'^articles/$'), ArticleListView.as_view(), name='article_list'),
     url(_(r'^articles/(?P<slug>[-\w]+)/(?P<pk>\d+)/$'),
         ArticleDetailView.as_view(), name='article_detail'),
+    url(r'^article-tag-list/(?P<tag_id>.*)/(?P<tag_slug>.*)/$',
+        ArticleListTagFilterView.as_view(), name='article_list_by_tag'),
+    
+    
     url('^i18n/setlang/', set_language, name='set_language'),
     *aldryn_addons.urls.i18n_patterns()  # MUST be the last entry!
 )

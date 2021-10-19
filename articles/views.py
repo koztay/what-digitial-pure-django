@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from django.views.generic import CreateView, DeleteView, DetailView, FormView, ListView, TemplateView, UpdateView, View
 
+from taggit.models import Tag
+
 from .models import Article
 
 
@@ -24,3 +26,15 @@ class ArticleDetailView(DetailView):
 
     def get_object(self):
         return get_object_or_404(Article, pk=self.kwargs["pk"])
+
+
+class ArticleListTagFilterView(ListView):
+    model = Article
+
+    def get_queryset(self, *args, **kwargs):
+        qs = super(ArticleListTagFilterView, self).get_queryset()
+        tag_slug = self.kwargs["tag_slug"]
+        tag_id = self.kwargs["tag_id"]
+        tag = get_object_or_404(Tag, slug=tag_slug, id=tag_id)
+        qs = qs.filter(tags__in=[tag])
+        return qs

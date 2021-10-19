@@ -55,8 +55,8 @@ INSTALLED_APPS.extend([
     "articles",
     "taggit",
     "ckeditor",
-    # "sorl.thumbnail",
     "easy_thumbnails",
+    "taggit_templatetags2",
 ])
 
 # To see the settings that have been applied, use the Django diffsettings

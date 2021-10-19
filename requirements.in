@@ -7,6 +7,6 @@ django-parler  # https://github.com/edoburu/django-parler (for multilanguage)
 django-filter  # https://github.com/carltongibson/django-filter
 django-ckeditor  # https://github.com/django-ckeditor/django-ckeditor
 django-taggit  # https://github.com/jazzband/django-taggit
-django-taggit-templatetags  # http://github.com/feuervogel/django-taggit-templatetags
+django-taggit-templatetags2  # https://github.com/fizista/django-taggit-templatetags2
 django-environ  # https://github.com/joke2k/django-environ
 easy-thumbnails  # https://github.com/SmileyChris/easy-thumbnails

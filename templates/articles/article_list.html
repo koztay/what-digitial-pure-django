@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load i18n static %}
+{% load i18n static calculate_font_size taggit_templatetags2_tags %}
 {% block header %}
 <header class="masthead" style="background-image: url('{% static "img/home-bg.jpg" %}')">
     <div class="overlay"></div>
@@ -24,16 +24,15 @@
             {% endfor %}
         </div>
         <div class="col-lg-3 mx-auto">
-            tag list here
-            tag list here
-            tag list here
-            tag list here
-            tag list here
-            tag list here
-            tag list here
-            tag list here
-            tag list here
-            tag list here
+        <h4>{% trans "Tag List" %}</h4>
+        {% get_taglist as tags for 'articles.Article' %}
+        {% for tag in tags %}
+        {% if tag.name %}
+
+        <a href="{% url 'article_list_by_tag' tag_slug=tag.slug tag_id=tag.id %}"
+            style="font-size:{{ tag.num_times | calculate_font_size }};">{{ tag.name }}</a>
+        {% endif %}
+        {% endfor %}
         </div>
     </div>
 </div>
